@@ -2,9 +2,8 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
-    // ❌ 移除：id("org.jetbrains.kotlin.android")  AGP 9 内置 Kotlin 已接管
-    // ❌ 移除：id("org.jetbrains.kotlin.kapt")    与内置 Kotlin 不兼容
-    id("com.google.devtools.ksp") // ✅ 新增：用 KSP 替代 kapt
+    id("org.jetbrains.kotlin.android")   // ✅ 恢复
+    id("org.jetbrains.kotlin.kapt")      // ✅ 恢复
 }
 
 android {
@@ -67,8 +66,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    // ❌ 删除 kotlinOptions { ... } 块（AGP 9 已移除该 DSL）
-
     buildFeatures {
         compose = true
     }
@@ -108,7 +105,7 @@ android {
     }
 }
 
-// ✅ 新增：顶层 kotlin { compilerOptions { ... } } 替代原 kotlinOptions
+// ✅ 保留顶层 kotlin 块（AGP 9 移除了 android.kotlinOptions）
 kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -139,10 +136,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room Database —— kapt 改为 ksp
+    // Room Database —— 用 kapt
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1") // ✅ kapt → ksp
+    kapt("androidx.room:room-compiler:2.6.1")   // ✅ 改回 kapt
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
