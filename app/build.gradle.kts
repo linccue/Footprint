@@ -1,10 +1,10 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.util.Properties
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.kapt")
+    // ❌ 移除：id("org.jetbrains.kotlin.android")  AGP 9 内置 Kotlin 已接管
+    // ❌ 移除：id("org.jetbrains.kotlin.kapt")    与内置 Kotlin 不兼容
+    id("com.google.devtools.ksp") // ✅ 新增：用 KSP 替代 kapt
 }
 
 android {
@@ -33,26 +33,22 @@ android {
         }
 
         ndk {
-            // 仅保留主流手机 64位 架构，移除 32位 和 x86 架构能显著减小体积
             abiFilters.clear()
             abiFilters.add("arm64-v8a")
         }
-        // Note: xxhdpi filtering is now handled through splitting if needed, 
-        // but for now, we only move the locale filters as suggested by the warning.
         resourceConfigurations += listOf("zh", "zh-rCN", "en")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false  // 禁用混淆，保证 Release 版本功能与 Debug 完全一致
-            isShrinkResources = false // 禁用资源缩减，防止误删图片处理相关资源
-            // 关键：确保子项目（如 Flutter 模块）也使用 Release 模式
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
             matchingFallbacks += listOf("release")
-            
+
             ndk {
                 abiFilters.clear()
                 abiFilters.add("arm64-v8a")
@@ -71,10 +67,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
-        freeCompilerArgs = freeCompilerArgs + listOf("-Xcontext-receivers")
-    }
+    // ❌ 删除 kotlinOptions { ... } 块（AGP 9 已移除该 DSL）
 
     buildFeatures {
         compose = true
@@ -115,6 +108,14 @@ android {
     }
 }
 
+// ✅ 新增：顶层 kotlin { compilerOptions { ... } } 替代原 kotlinOptions
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+        freeCompilerArgs.add("-Xcontext-receivers")
+    }
+}
+
 dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
     implementation(composeBom)
@@ -138,22 +139,22 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room Database
+    // Room Database —— kapt 改为 ksp
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1") // ✅ kapt → ksp
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // AMap (高德地图) SDK
+    // AMap
     implementation("com.amap.api:3dmap:latest.integration")
 
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
 
-    // Coil (Image Loading)
+    // Coil
     implementation("io.coil-kt:coil-compose:2.5.0")
 
     // WorkManager
@@ -165,7 +166,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
-    // Haze (Glassmorphism)
+    // Haze
     implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.2")
 
     // Flutter Module
