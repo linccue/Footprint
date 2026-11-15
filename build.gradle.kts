@@ -85,3 +85,42 @@ subprojects {
         }
     }
 }
+// ============================================================
+// 修复 amap_flutter_location 的 jcenter() 问题
+// 以及全局禁用 includeAndroidResources
+// ============================================================
+
+// 1. 为所有子项目预先声明有效仓库（覆盖插件内部的 jcenter()）
+subprojects {
+    repositories {
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        google()
+        mavenCentral()
+        maven { url = uri("https://storage.googleapis.com/download.flutter.io") }
+    }
+
+    // 针对 amap_flutter_location 的额外保险：在它评估之前就注入仓库
+    if (name == "amap_flutter_location") {
+        beforeEvaluate {
+            repositories {
+                google()
+                mavenCentral()
+            }
+        }
+    }
+}
+
+// 2. 全局禁用 includeAndroidResources（原 settings 中的 gradle.allprojects 逻辑）
+allprojects {
+    afterEvaluate {
+        extensions.findByName("android")?.let { android ->
+            try {
+                val testOptions = android.javaClass.getMethod("getTestOptions").invoke(android)
+                val unitTests = testOptions.javaClass.getMethod("getUnitTests").invoke(testOptions)
+                unitTests.javaClass.getMethod("setIncludeAndroidResources", Boolean::class.javaPrimitiveType)
+                    .invoke(unitTests, false)
+            } catch (e: Exception) { }
+        }
+    }
+}
