@@ -99,8 +99,7 @@ android {
             force("androidx.activity:activity-ktx:1.9.3")
             force("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6")
 
-            // 强制锁定高德定位版本，防止被其他依赖（如 Flutter 插件）间接拉高
-            force("com.amap.api:location:6.4.3")
+            // 方案A：定位类由 3dmap 内联提供，不再强制锁定独立 location 版本
         }
     }
 }
@@ -144,11 +143,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // ===== 高德地图：降级为独立模块组合，根治重复类冲突 =====
-    // 使用 3dmap:9.4.0 + search:9.4.0 + location:6.4.3 的稳定组合
+    // ===== 高德地图：方案A，定位类由 3dmap 内联提供 =====
+    // 3dmap:9.4.0 已内联定位核心类，作为定位类的唯一提供者
     implementation("com.amap.api:3dmap:9.4.0")
-    implementation("com.amap.api:search:9.4.0")
-    implementation("com.amap.api:location:6.4.3")
+    // search:9.4.0 提供搜索功能，排除其传递的 location 依赖，避免重复类
+    implementation("com.amap.api:search:9.4.0") {
+        exclude(group = "com.amap.api", module = "location")
+    }
+    // 不再单独引入 com.amap.api:location
 
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
