@@ -2,8 +2,8 @@ import java.util.Properties
 
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")   // ✅ 恢复
-    id("org.jetbrains.kotlin.kapt")      // ✅ 恢复
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.kapt")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -71,8 +71,6 @@ android {
         compose = true
     }
 
-   
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -104,11 +102,10 @@ android {
     }
 }
 
-// ✅ 保留顶层 kotlin 块（AGP 9 移除了 android.kotlinOptions）
 kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        freeCompilerArgs.add("-Xcontext-parameters")   // 原为 -Xcontext-receivers
+        freeCompilerArgs.add("-Xcontext-parameters")
     }
 }
 
@@ -135,21 +132,20 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room Database —— 用 kapt
+    // Room Database
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")   // ✅ 改回 kapt
+    kapt("androidx.room:room-compiler:2.6.1")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-   dependencies {
-    // 找到你引入聚合包的这行，在后面加上括号和exclude
-    implementation('com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2') {
-        // 排除掉重复的独立定位包
-   exclude(group = "com.amap.api", module = "location")
+    // 高德地图（排除重复的 location 模块）
+    implementation("com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2") {
+        exclude(group = "com.amap.api", module = "location")
     }
+
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
 
