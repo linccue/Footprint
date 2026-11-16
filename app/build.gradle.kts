@@ -76,10 +76,6 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             excludes += "**/rust/**"
             excludes += "**/target/**"
-
-            // ===== 方案2：强制去重高德定位/围栏的重复类 =====
-            pickFirsts += "**/com/amap/api/location/**"
-            pickFirsts += "**/com/amap/api/fence/**"
         }
         jniLibs {
             useLegacyPackaging = true
@@ -102,8 +98,6 @@ android {
             force("androidx.activity:activity-compose:1.9.3")
             force("androidx.activity:activity-ktx:1.9.3")
             force("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6")
-
-            // 方案2：不再强制锁定 location 版本，由 pickFirst 去重兜底
         }
     }
 }
@@ -147,8 +141,11 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // ===== 高德地图：方案2，只保留一个聚合包，重复类交给 pickFirst 去重 =====
-    implementation("com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2")
+    // ===== 方案A：兼容的独立模块组合，彻底避开重复类 =====
+    // search:9.4.0 尚未内联定位类，与 location:6.4.3 边界清晰，可共存
+    implementation("com.amap.api:search:9.4.0")
+    // amap_flutter_location 插件要求手动提供 location，此处显式引入
+    implementation("com.amap.api:location:6.4.3")
 
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
