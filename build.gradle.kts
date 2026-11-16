@@ -12,8 +12,7 @@ tasks.register("clean", Delete::class) {
 }
 
 subprojects {
-    // Inject fake flutter config if not exists to fix AGP 8.x+ error with some plugins
-    // We use a Map so Groovy can access it via property syntax (flutter.compileSdkVersion)
+    // 给缺少 flutter 配置的插件注入默认值
     if (project.name == "flutter_plugin_android_lifecycle" || project.name.contains("city_picker")) {
         project.extensions.extraProperties.set("flutter", mapOf(
             "compileSdkVersion" to 35,
@@ -22,12 +21,12 @@ subprojects {
         ))
     }
 
-    // Aggressive fix for "Namespace not specified" and low compileSdk in AGP 8.x+ for Flutter plugins
+    // 修复第三方插件的 namespace 缺失 / compileSdk 过低
     project.afterEvaluate {
         if (project.hasProperty("android")) {
             val android = project.extensions.getByName("android")
-            
-            // 1. Namespace Fix
+
+            // 1. namespace 兜底
             try {
                 val getNamespace = android.javaClass.getMethod("getNamespace")
                 val namespace = getNamespace.invoke(android)
@@ -44,11 +43,9 @@ subprojects {
                 }
             } catch (e: Exception) {}
 
-            // 2. CompileSdk Fix (Ensure at least 36)
+            // 2. compileSdk 兜底（至少 35）
             try {
                 var currentSdkVersion: Int? = null
-                
-                // Try to get current SDK version
                 try {
                     val getCompileSdk = android.javaClass.getMethod("getCompileSdk")
                     currentSdkVersion = getCompileSdk.invoke(android) as? Int
@@ -63,13 +60,11 @@ subprojects {
                 }
 
                 if (currentSdkVersion != null && currentSdkVersion < 35) {
-                    // Try setCompileSdk(int) first
                     try {
                         val setCompileSdk = android.javaClass.getMethod("setCompileSdk", java.lang.Integer.TYPE)
                         setCompileSdk.invoke(android, 35)
                         println("Forced compileSdk to 35 for ${project.name} (was $currentSdkVersion)")
                     } catch (e: Exception) {
-                        // Fallback to setCompileSdkVersion(String)
                         val setCompileSdkVersion = android.javaClass.getMethod("setCompileSdkVersion", String::class.java)
                         setCompileSdkVersion.invoke(android, "android-35")
                         println("Forced compileSdkVersion to android-35 for ${project.name} (was $currentSdkVersion)")
@@ -79,48 +74,10 @@ subprojects {
         }
     }
 
+    // 禁用 includeAndroidResources（原来在 settings 里想做但没做成的事）
     afterEvaluate {
         (extensions.findByName("android") as? BaseExtension)?.apply {
             testOptions.unitTests.isIncludeAndroidResources = false
-        }
-    }
-}
-// ============================================================
-// 修复 amap_flutter_location 的 jcenter() 问题
-// 以及全局禁用 includeAndroidResources
-// ============================================================
-
-// 1. 为所有子项目预先声明有效仓库（覆盖插件内部的 jcenter()）
-subprojects {
-    repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        google()
-        mavenCentral()
-        maven { url = uri("https://storage.googleapis.com/download.flutter.io") }
-    }
-
-    // 针对 amap_flutter_location 的额外保险：在它评估之前就注入仓库
-    if (name == "amap_flutter_location") {
-        beforeEvaluate {
-            repositories {
-                google()
-                mavenCentral()
-            }
-        }
-    }
-}
-
-// 2. 全局禁用 includeAndroidResources（原 settings 中的 gradle.allprojects 逻辑）
-allprojects {
-    afterEvaluate {
-        extensions.findByName("android")?.let { android ->
-            try {
-                val testOptions = android.javaClass.getMethod("getTestOptions").invoke(android)
-                val unitTests = testOptions.javaClass.getMethod("getUnitTests").invoke(testOptions)
-                unitTests.javaClass.getMethod("setIncludeAndroidResources", Boolean::class.javaPrimitiveType)
-                    .invoke(unitTests, false)
-            } catch (e: Exception) { }
         }
     }
 }
