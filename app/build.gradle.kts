@@ -148,7 +148,7 @@ dependencies {
     // 找到你引入聚合包的这行，在后面加上括号和exclude
     implementation('com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2') {
         // 排除掉重复的独立定位包
-        exclude group: 'com.amap.api', module: 'location' 
+   exclude(group = "com.amap.api", module = "location")
     }
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
