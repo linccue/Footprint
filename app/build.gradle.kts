@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.footprint"
-    compileSdk = 35
+    compileSdk = 36
     layout.buildDirectory.set(rootProject.layout.buildDirectory.dir("app_build_fresh"))
 
     val localProperties = Properties().apply {
@@ -108,7 +108,7 @@ android {
 kotlin {
     compilerOptions {
         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        freeCompilerArgs.add("-Xcontext-receivers")
+        freeCompilerArgs.add("-Xcontext-parameters")   // 原为 -Xcontext-receivers
     }
 }
 
