@@ -144,8 +144,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // AMap
-    implementation("com.amap.api:3dmap:latest.integration")
+   // ✅ 添加这一行合并包
+implementation("com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2")
 
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
