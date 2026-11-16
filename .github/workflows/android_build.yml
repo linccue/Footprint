@@ -21,19 +21,18 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # ===== 新增：安装 Flutter =====
+    # ===== 安装 Flutter =====
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
         cache: true
 
-    # ===== 新增：生成 flutter_ui/.android/include_flutter.groovy =====
+    # ===== 生成 flutter_ui/.android/include_flutter.groovy =====
     - name: Generate Flutter Android files
       working-directory: ./flutter_ui
       run: |
         flutter pub get
-        # 如果 pub get 没有生成 include_flutter.groovy，再兜底 build aar
         if [ ! -f .android/include_flutter.groovy ]; then
           flutter build aar --debug
         fi
@@ -44,27 +43,37 @@ jobs:
     - name: Create local.properties
       run: |
         echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
-        # 让 Flutter 的 Gradle 插件能找到 Flutter SDK
         if [ -n "$FLUTTER_ROOT" ]; then
           echo "flutter.sdk=$FLUTTER_ROOT" >> local.properties
         fi
-        # 如果 Github Secrets 中配置了 AMAP_KEY，则写入，否则使用占位符
         if [ ! -z "${{ secrets.AMAP_KEY }}" ]; then
           echo "AMAP_KEY=${{ secrets.AMAP_KEY }}" >> local.properties
         else
           echo "AMAP_KEY=YOUR_DEBUG_KEY" >> local.properties
         fi
 
+    # ===== 新增：Rust Android 编译目标 =====
+    - name: Add Rust Android target
+      run: rustup target add aarch64-linux-android
+
+    # ===== 替换：用预编译二进制安装 cargo-ndk =====
     - name: Install cargo-ndk
-      run: cargo install cargo-ndk --locked
+      uses: taiki-e/install-action@v2
+      with:
+        tool: cargo-ndk
+
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
     - name: Get SHA1 for Debug Keystore
       run: ./gradlew signingReport
 
+    # ===== 修正：APK 实际输出在 build/app_build_fresh/ 下 =====
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: |
+          build/app_build_fresh/outputs/apk/debug/*.apk
+          app/build/outputs/apk/debug/*.apk
+        if-no-files-found: warn
