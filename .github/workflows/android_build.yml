@@ -55,6 +55,8 @@ jobs:
           echo "AMAP_KEY=YOUR_DEBUG_KEY" >> local.properties
         fi
 
+    - name: Install cargo-ndk
+      run: cargo install cargo-ndk --locked
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
