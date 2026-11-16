@@ -98,3 +98,9 @@ flutter:
     androidX: true
     androidPackage: com.footprint.flutter_ui
     iosBundleIdentifier: com.footprint.flutterUi
+dependency_overrides:
+  amap_flutter_location:
+    git:
+      url: https://github.com/linccue/amap_flutter.git
+      path: amap_flutter_location
+      ref: master
