@@ -76,6 +76,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
             excludes += "**/rust/**"
             excludes += "**/target/**"
+
+            // ===== 方案2：强制去重高德定位/围栏的重复类 =====
+            pickFirsts += "**/com/amap/api/location/**"
+            pickFirsts += "**/com/amap/api/fence/**"
         }
         jniLibs {
             useLegacyPackaging = true
@@ -99,7 +103,7 @@ android {
             force("androidx.activity:activity-ktx:1.9.3")
             force("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6")
 
-            // 方案A：定位类由 3dmap 内联提供，不再强制锁定独立 location 版本
+            // 方案2：不再强制锁定 location 版本，由 pickFirst 去重兜底
         }
     }
 }
@@ -143,14 +147,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // ===== 高德地图：方案A，定位类由 3dmap 内联提供 =====
-    // 3dmap:9.4.0 已内联定位核心类，作为定位类的唯一提供者
-    implementation("com.amap.api:3dmap:9.4.0")
-    // search:9.4.0 提供搜索功能，排除其传递的 location 依赖，避免重复类
-    implementation("com.amap.api:search:9.4.0") {
-        exclude(group = "com.amap.api", module = "location")
-    }
-    // 不再单独引入 com.amap.api:location
+    // ===== 高德地图：方案2，只保留一个聚合包，重复类交给 pickFirst 去重 =====
+    implementation("com.amap.api:3dmap-location-search:10.0.700_loc6.4.5_sea9.7.2")
 
     // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
