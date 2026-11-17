@@ -3,7 +3,8 @@ import java.util.Properties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.kapt")
+    // id("org.jetbrains.kotlin.kapt")  // 删除 kapt 插件
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27"  // 新增 KSP 插件
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -132,10 +133,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room Database
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    // Room Database —— 升级到 2.7.0 并使用 KSP
+    implementation("androidx.room:room-runtime:2.7.0")
+    implementation("androidx.room:room-ktx:2.7.0")
+    ksp("androidx.room:room-compiler:2.7.0")  // 由 kapt 改为 ksp
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
