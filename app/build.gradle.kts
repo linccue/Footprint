@@ -117,6 +117,10 @@ dependencies {
     implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
+// 高德地图 3D 地图SDK（必须，你用到 AMap / MapView / LatLng）
+    implementation 'com.amap.api:3dmap:latest.release'
+    // 高德定位（amap_flutter_location 已经依赖，但加上保险）
+    implementation 'com.amap.api:location:latest.release'
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui")
