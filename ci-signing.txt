@@ -1,0 +1,28 @@
+package: com.footprint
+amap_key: configured
+Alias name: my-key-alias
+Creation date: Nov 8, 2026
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=wuyulin, OU=dev, O=dev, L=guangzhou, ST=guangzhou, C=cn
+Issuer: CN=wuyulin, OU=dev, O=dev, L=guangzhou, ST=guangzhou, C=cn
+Serial number: 4b01f8f60561c47f
+Valid from: Sun Nov 08 03:18:10 UTC 2026 until: Thu Mar 26 03:18:10 UTC 2054
+Certificate fingerprints:
+	 SHA1: 4C:6C:79:CB:65:5F:EC:9D:F9:61:28:9C:4D:C1:59:CE:E1:B8:88:EC
+	 SHA256: EE:CD:EA:B2:B1:E2:FF:79:B2:7A:33:A8:76:FA:AE:B7:35:BE:94:8D:8E:0E:16:39:36:3D:5F:98:9F:21:4D:2E
+Signature algorithm name: SHA384withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 3E EA 55 EF 5A 3B AB 3E   E0 0C E0 C6 90 4C 61 80  >.U.Z;.>.....La.
+0010: DA CD 0B 9A                                        ....
+]
+]
+
