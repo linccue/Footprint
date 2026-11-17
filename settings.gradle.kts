@@ -1,5 +1,19 @@
 pluginManagement {
     repositories {
+        mavenCentral()
+        google()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+pluginManagement {
+    repositories {
         maven { url = uri("https://repo.huaweicloud.com/repository/maven-public/") }
         maven { url = uri("https://repo.huaweicloud.com/repository/google/") }
         maven { url = uri("https://repo.huaweicloud.com/repository/gradle-plugin/") }
