@@ -1,11 +1,11 @@
-import com.android.build.gradle.BaseExtension
+import com.android.build.api.dsl.CommonExtension
 
 plugins {
     id("com.android.application") version "9.1.1" apply false
     id("com.android.library") version "9.1.1" apply false
     id("org.jetbrains.kotlin.android") version "2.2.20" apply false
     id("org.jetbrains.kotlin.kapt") version "2.2.20" apply false
- id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.20" apply false
 }
 
 tasks.register("clean", Delete::class) {
@@ -75,9 +75,9 @@ subprojects {
         }
     }
 
-    // 禁用 includeAndroidResources（原来在 settings 里想做但没做成的事）
+    // 禁用 includeAndroidResources，替换 BaseExtension 为 CommonExtension（AGP9 newDsl 兼容）
     afterEvaluate {
-        (extensions.findByName("android") as? BaseExtension)?.apply {
+        (extensions.findByName("android") as? CommonExtension)?.apply {
             testOptions.unitTests.isIncludeAndroidResources = false
         }
     }
