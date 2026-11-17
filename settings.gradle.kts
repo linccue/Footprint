@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        maven { url = uri("https://maven.aliyun.com/repository/gradle-plugin") }
+        maven { url = uri("https://repo.huaweicloud.com/repository/maven-public/") }
+        maven { url = uri("https://repo.huaweicloud.com/repository/google/") }
+        maven { url = uri("https://repo.huaweicloud.com/repository/gradle-plugin/") }
         google()
         mavenCentral()
         gradlePluginPortal()
@@ -12,8 +12,8 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://repo.huaweicloud.com/repository/maven-public/") }
+        maven { url = uri("https://repo.huaweicloud.com/repository/google/") }
         google()
         mavenCentral()
         maven { url = uri("https://storage.googleapis.com/download.flutter.io") }
