@@ -36,7 +36,6 @@ android {
         }
         resourceConfigurations += listOf("zh", "zh-rCN", "en")
 
-        // Room schema导出，KSP需要
         ksp {
             arg("room.schemaLocation", "$projectDir/schemas")
         }
@@ -107,12 +106,10 @@ kotlin {
 }
 
 dependencies {
-    // Compose BOM，适配 Kotlin2.0
     val composeBom = platform("androidx.compose:compose-bom:2025.03.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    // Core Android（版本和上面force对齐）
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
     implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
@@ -128,43 +125,31 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room KSP
     implementation("androidx.room:room-runtime:2.7.0")
     implementation("androidx.room:room-ktx:2.7.0")
     ksp("androidx.room:room-compiler:2.7.0")
 
-    // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // 高德地图（search + location 你原来的组合保留）
     implementation("com.amap.api:search:9.4.0")
     implementation("com.amap.api:location:6.4.3")
 
-    // JSON
     implementation("com.google.code.gson:gson:2.10.1")
-
-    // Coil
     implementation("io.coil-kt:coil-compose:2.5.0")
-
-    // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
 
-    // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
-    // Haze
     implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.2")
 
-    // Flutter Module
     debugImplementation(project(path = ":flutter", configuration = "debugRuntimeElements"))
     releaseImplementation(project(path = ":flutter", configuration = "releaseRuntimeElements"))
 }
 
-// Rust编译任务，修复 cargo ndk 参数
 val buildRustTask = tasks.register<Exec>("buildRust") {
     workingDir = file("rust")
     commandLine(
