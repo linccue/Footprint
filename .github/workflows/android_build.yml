@@ -55,19 +55,16 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Ensure stable debug keystore
+    - name: Provide signing keystore
+      env:
+        SIGN_KEYSTORE_BASE64: ${{ secrets.SIGN_KEYSTORE_BASE64 }}
       run: |
         mkdir -p keystore
-        if [ ! -f keystore/debug.keystore ]; then
-          keytool -genkeypair -v -keystore keystore/debug.keystore \
-            -storepass android -keypass android \
-            -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 \
-            -dname "CN=Android Debug,O=Android,C=US"
-          git config user.name "ci-bot"
-          git config user.email "ci-bot@users.noreply.github.com"
-          git add -f keystore/debug.keystore
-          git commit -m "ci: add stable debug keystore [skip ci]"
-          git push origin HEAD:master
+        if [ -n "$SIGN_KEYSTORE_BASE64" ]; then
+          echo "$SIGN_KEYSTORE_BASE64" | base64 -d > keystore/app.jks
+          echo "keystore ready: $(ls -l keystore/app.jks | awk '{print $5}') bytes"
+        else
+          echo "::warning::SIGN_KEYSTORE_BASE64 未配置，本次使用临时调试签名（SHA1 会变化）"
         fi
 
     - name: Add Rust Android target
@@ -79,19 +76,31 @@ jobs:
         tool: cargo-ndk
 
     - name: Build with Gradle
+      env:
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
       run: |
         set -o pipefail
         ./gradlew assembleDebug --stacktrace 2>&1 | tee build.log
 
     - name: Publish signing info
       if: always()
+      env:
+        KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
       run: |
         git config user.name "ci-bot"
         git config user.email "ci-bot@users.noreply.github.com"
         {
           echo "package: com.footprint"
-          echo "keystore: keystore/debug.keystore"
-          keytool -list -v -keystore keystore/debug.keystore -storepass android -alias androiddebugkey || true
+          if [ -f keystore/app.jks ]; then
+            keytool -list -v -keystore keystore/app.jks \
+              -storepass "$KEYSTORE_PASSWORD" -alias "$KEY_ALIAS" || true
+          else
+            keytool -list -v -keystore "$HOME/.android/debug.keystore" \
+              -storepass android -alias androiddebugkey || true
+          fi
         } > ci-signing.txt 2>&1
         git checkout -B ci-info
         git add -f ci-signing.txt
@@ -109,12 +118,7 @@ jobs:
         git commit -m "ci: capture build log [skip ci]" || true
         git push -f origin ci-build-log
 
-    - name: Get SHA1 for Debug Keystore
-      if: success()
-      run: ./gradlew signingReport
-
     - name: Upload APK
-      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
