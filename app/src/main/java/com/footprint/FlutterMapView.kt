@@ -1080,7 +1080,7 @@ class FlutterMapView(
                     return
                 }
 
-                // 2. 否则，异步等待原生定位 Fix (最多等待 3s)
+                // 2. 否则，异步等待原生定位 Fix (最多等待 8s，冷启动较慢)
                 scope.launch {
                     var finalLat = 0.0
                     var finalLng = 0.0
@@ -1089,7 +1089,7 @@ class FlutterMapView(
                     aMap?.isMyLocationEnabled = true
 
                     // 轮询检查是否有可用坐标
-                    for (i in 0 until 15) { // 15 * 200ms = 3s
+                    for (i in 0 until 40) { // 40 * 200ms = 8s
                         if (cachedLat > 1.0 && cachedLng > 1.0) {
                             finalLat = cachedLat
                             finalLng = cachedLng
@@ -1146,8 +1146,8 @@ class FlutterMapView(
                             }
                             singleClient.startLocation()
                             
-                            // 等待强力定位结果 (3秒)
-                            for(j in 0 until 10) {
+                            // 等待强力定位结果 (7.5秒，冷启动较慢)
+                            for(j in 0 until 25) {
                                 if (foundByClient) break
                                 delay(300)
                             }
