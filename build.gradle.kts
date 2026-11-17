@@ -37,10 +37,11 @@ subprojects {
                 println("Manually set namespace for ${project.name} to $targetNamespace")
             }
 
-            // ========== 2. compileSdk 兜底，强制 >=35 ==========
-            if (androidExt.compileSdk < 35) {
+            // ========== 2. compileSdk 兜底（修复可空Int?） ==========
+            val currentCompileSdk = androidExt.compileSdk
+            if (currentCompileSdk == null || currentCompileSdk < 35) {
                 androidExt.compileSdk = 35
-                println("Forced compileSdk to 35 for ${project.name} (was ${androidExt.compileSdk})")
+                println("Forced compileSdk to 35 for ${project.name} (was $currentCompileSdk)")
             }
 
             // ========== 3. 关闭 unitTests includeAndroidResources ==========
