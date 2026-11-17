@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # ===== 锁定 Flutter 3.41.0，Dart=3.11.0，匹配 pubspec ^3.11.0 =====
+    # ===== 锁定 Flutter 3.41.0，Dart=3.11.0 =====
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
@@ -40,6 +40,12 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+
+    # ========== 新增：注入AndroidX配置 ==========
+    - name: Create gradle.properties
+      run: |
+        echo "android.useAndroidX=true" > gradle.properties
+        echo "android.enableJetifier=true" >> gradle.properties
 
     - name: Create local.properties
       run: |
