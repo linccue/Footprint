@@ -76,6 +76,7 @@ jobs:
         tool: cargo-ndk
 
     - name: Build with Gradle
+      id: gradle
       env:
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -86,6 +87,7 @@ jobs:
 
     - name: Publish signing info
       if: always()
+      continue-on-error: true
       env:
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -107,23 +109,23 @@ jobs:
               -storepass android -alias androiddebugkey || true
           fi
         } > ci-signing.txt 2>&1
-        git checkout -B ci-info
         git add -f ci-signing.txt
         git commit -m "ci: signing info [skip ci]" || true
-        git push -f origin ci-info
+        git push -f origin HEAD:ci-info || true
 
     - name: Publish build log on failure
       if: failure()
+      continue-on-error: true
       run: |
         git config user.name "ci-bot"
         git config user.email "ci-bot@users.noreply.github.com"
         tail -c 300000 build.log > ci-build.log || true
-        git checkout -B ci-build-log
         git add -f ci-build.log
         git commit -m "ci: capture build log [skip ci]" || true
-        git push -f origin ci-build-log
+        git push -f origin HEAD:ci-build-log || true
 
     - name: Upload APK
+      if: steps.gradle.outcome == 'success'
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
