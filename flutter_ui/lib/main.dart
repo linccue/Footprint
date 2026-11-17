@@ -3210,6 +3210,9 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
   // Flutter 高德定位客户端 (仅供单击定位使用)
   final AMapFlutterLocation _locationClient = AMapFlutterLocation();
   StreamSubscription<Map<String, Object>>? _locationSubscription;
+  // amap_flutter_location 的 onLocationChanged() 是单订阅 Stream，
+  // 重复 listen 会抛 "Stream has already been listened to"，因此只订阅一次
+  void Function(Map<String, Object>)? _onLocationEvent;
   StreamSubscription? _streamSubscription;
 
   // === 定位状态管理 ===
@@ -3463,7 +3466,7 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
   /// 在非追踪/非定位时停止定位服务
   void _stopLocationIfIdle() {
     if (!_isTracking && !_isLocating) {
-      _locationSubscription?.cancel();
+      _onLocationEvent = null;
       _locationClient.stopLocation();
     }
   }
@@ -3652,6 +3655,13 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
   }
 
   // === 定位按钮：直接使用原生地图的位置居中 ===
+  /// 保证定位回调只订阅一次（插件返回的是单订阅 Stream）
+  void _ensureLocationListener() {
+    _locationSubscription ??= _locationClient.onLocationChanged().listen((result) {
+      _onLocationEvent?.call(result);
+    });
+  }
+
   Future<void> _handleLocateMe() async {
     try {
       final status = await Permission.locationWhenInUse.request();
@@ -3688,9 +3698,9 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
 
       // === 策略2：原生没有位置数据时，使用 Flutter AMap 定位 SDK 获取坐标 ===
       _locationClient.setLocationOption(AMapLocationOption(onceLocation: true, locationMode: AMapLocationMode.Hight_Accuracy, needAddress: true));
-      _locationSubscription?.cancel();
+      _ensureLocationListener();
       bool hasResult = false;
-      _locationSubscription = _locationClient.onLocationChanged().listen((result) async {
+      _onLocationEvent = (result) async {
         if (!mounted || hasResult) return;
         final double? lat = result['latitude'] as double?;
         final double? lng = result['longitude'] as double?;
@@ -3703,7 +3713,7 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
             _userRequestedLocation = false;
           });
           _updateNativeLocationState();
-          _locationSubscription?.cancel();
+          _onLocationEvent = null;
           _locationClient.stopLocation();
           if (!mounted) return;
           String errMsg;
@@ -3729,11 +3739,11 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
           });
           _updateNativeLocationState();
           await _mapChannel?.invokeMethod('centerLocation', {'latitude': lat, 'longitude': lng, 'zoom': 17.0});
-          _locationSubscription?.cancel();
+          _onLocationEvent = null;
           _locationClient.stopLocation();
           if (mounted) ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("定位成功"), backgroundColor: Colors.green, duration: Duration(seconds: 1)));
         }
-      });
+      };
       _locationClient.startLocation();
       Future.delayed(const Duration(seconds: 10), () {
         if (!hasResult && mounted) {
@@ -3742,7 +3752,7 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
             _userRequestedLocation = false;
           });
           _updateNativeLocationState();
-          _locationSubscription?.cancel();
+          _onLocationEvent = null;
           _locationClient.stopLocation();
           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("定位超时：请检查GPS是否开启及网络状况"), backgroundColor: Colors.orange));
         }
