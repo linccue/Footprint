@@ -2,14 +2,16 @@ name: Android Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
@@ -21,31 +23,12 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # ===== 锁定 Flutter 3.41.0，Dart=3.11.0 =====
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
         channel: stable
         flutter-version: '3.41.0'
         cache: true
-
-    # ===== 生成 flutter_ui/.android/include_flutter.groovy =====
-    - name: Generate Flutter Android files
-      working-directory: ./flutter_ui
-      run: |
-        flutter pub get
-        if [ ! -f .android/include_flutter.groovy ]; then
-          flutter build aar --debug
-        fi
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-
-    # ========== 新增：注入AndroidX配置 ==========
-    - name: Create gradle.properties
-      run: |
-        echo "android.useAndroidX=true" > gradle.properties
-        echo "android.enableJetifier=true" >> gradle.properties
 
     - name: Create local.properties
       run: |
@@ -59,24 +42,47 @@ jobs:
           echo "AMAP_KEY=YOUR_DEBUG_KEY" >> local.properties
         fi
 
-    # ===== 新增：Rust Android 编译目标 =====
+    - name: Generate Flutter Android module
+      working-directory: ./flutter_ui
+      run: |
+        flutter pub get
+        if [ ! -f .android/include_flutter.groovy ]; then
+          flutter build aar --debug
+        fi
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
     - name: Add Rust Android target
       run: rustup target add aarch64-linux-android
 
-    # ===== 替换：用预编译二进制安装 cargo-ndk =====
     - name: Install cargo-ndk
       uses: taiki-e/install-action@v2
       with:
         tool: cargo-ndk
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: |
+        set -o pipefail
+        ./gradlew assembleDebug --stacktrace 2>&1 | tee build.log
+
+    - name: Publish build log on failure
+      if: failure()
+      run: |
+        git config user.name "ci-bot"
+        git config user.email "ci-bot@users.noreply.github.com"
+        tail -c 300000 build.log > ci-build.log || true
+        git checkout -B ci-build-log
+        git add -f ci-build.log
+        git commit -m "ci: capture build log" || true
+        git push -f origin ci-build-log
 
     - name: Get SHA1 for Debug Keystore
+      if: success()
       run: ./gradlew signingReport
 
-    # ===== 修正：APK 实际输出在 build/app_build_fresh/ 下 =====
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
