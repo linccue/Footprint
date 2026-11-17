@@ -94,6 +94,11 @@ jobs:
         git config user.email "ci-bot@users.noreply.github.com"
         {
           echo "package: com.footprint"
+          if [ -n "${{ secrets.AMAP_KEY }}" ]; then
+            echo "amap_key: configured"
+          else
+            echo "amap_key: MISSING"
+          fi
           if [ -f keystore/app.jks ]; then
             keytool -list -v -keystore keystore/app.jks \
               -storepass "$KEYSTORE_PASSWORD" -alias "$KEY_ALIAS" || true
