@@ -1,15 +1,15 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.util.Properties
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.devtools.ksp") version "2.0.21-1.0.27"
-    id("org.jetbrains.kotlin.plugin.compose")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
     namespace = "com.footprint"
-    compileSdk = 36
+    compileSdk = 35
     layout.buildDirectory.set(rootProject.layout.buildDirectory.dir("app_build_fresh"))
 
     val localProperties = Properties().apply {
@@ -31,27 +31,38 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-        ndk {
-            abiFilters += "arm64-v8a"
-        }
-        resourceConfigurations += listOf("zh", "zh-rCN", "en")
 
-        ksp {
-            arg("room.schemaLocation", "$projectDir/schemas")
+        ndk {
+            // 仅保留主流手机 64位 架构，移除 32位 和 x86 架构能显著减小体积
+            abiFilters.clear()
+            abiFilters.add("arm64-v8a")
         }
+        // Note: xxhdpi filtering is now handled through splitting if needed, 
+        // but for now, we only move the locale filters as suggested by the warning.
+        resourceConfigurations += listOf("zh", "zh-rCN", "en")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = false  // 禁用混淆，保证 Release 版本功能与 Debug 完全一致
+            isShrinkResources = false // 禁用资源缩减，防止误删图片处理相关资源
+            // 关键：确保子项目（如 Flutter 模块）也使用 Release 模式
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
             matchingFallbacks += listOf("release")
+            
+            ndk {
+                abiFilters.clear()
+                abiFilters.add("arm64-v8a")
+            }
         }
         debug {
+            ndk {
+                abiFilters.clear()
+                abiFilters.add("arm64-v8a")
+            }
         }
     }
 
@@ -60,8 +71,17 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    kotlinOptions {
+        jvmTarget = "17"
+        freeCompilerArgs = freeCompilerArgs + listOf("-Xcontext-receivers")
+    }
+
     buildFeatures {
         compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.14"
     }
 
     packaging {
@@ -91,67 +111,66 @@ android {
             force("androidx.activity:activity-compose:1.9.3")
             force("androidx.activity:activity-ktx:1.9.3")
             force("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6")
-            force("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
-            force("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
-            force("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
         }
     }
 }
 
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        freeCompilerArgs.add("-Xcontext-parameters")
-    }
-}
-
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2025.03.01")
+    val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
-    implementation("androidx.activity:activity-compose:1.9.3")
+    // Core Android
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
-// 高德地图 3D 地图SDK（必须，你用到 AMap / MapView / LatLng）
-    implementation 'com.amap.api:3dmap:latest.release'
-    // 高德定位（amap_flutter_location 已经依赖，但加上保险）
-    implementation 'com.amap.api:location:latest.release'
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.foundation:foundation-layout")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-text-google-fonts")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation("androidx.room:room-runtime:2.7.0")
-    implementation("androidx.room:room-ktx:2.7.0")
-    ksp("androidx.room:room-compiler:2.7.0")
+    // Room Database
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
 
+    // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    implementation("com.amap.api:search:9.4.0")
-    implementation("com.amap.api:location:6.4.3")
+    // AMap (高德地图) SDK
+    implementation("com.amap.api:3dmap:latest.integration")
 
+    // JSON Parsing
     implementation("com.google.code.gson:gson:2.10.1")
+
+    // Coil (Image Loading)
     implementation("io.coil-kt:coil-compose:2.5.0")
+
+    // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
 
+    // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
 
+    // Haze (Glassmorphism)
     implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.2")
 
-    debugImplementation(project(path = ":flutter", configuration = "debugRuntimeElements"))
-    releaseImplementation(project(path = ":flutter", configuration = "releaseRuntimeElements"))
+    // Flutter Module
+    "debugImplementation"(project(path = ":flutter", configuration = "debugRuntimeElements"))
+    "releaseImplementation"(project(path = ":flutter", configuration = "releaseRuntimeElements"))
 }
 
 val buildRustTask = tasks.register<Exec>("buildRust") {
@@ -159,7 +178,7 @@ val buildRustTask = tasks.register<Exec>("buildRust") {
     commandLine(
         "cargo", "ndk",
         "-t", "arm64-v8a",
-        "--output-dir", "../src/main/jniLibs",
+        "-o", "../src/main/jniLibs",
         "build", "--release"
     )
 }
