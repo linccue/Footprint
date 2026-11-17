@@ -21,11 +21,11 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    # ===== 安装 Flutter 固定 3.24.5 稳定版 =====
+    # ===== 锁定 Flutter 3.34.0（自带Dart3.11，匹配你的pubspec） =====
     - name: Set up Flutter
       uses: subosito/flutter-action@v2
       with:
-        flutter-version: '3.24.5'
+        flutter-version: '3.34.0'
         cache: true
 
     # ===== 生成 flutter_ui/.android/include_flutter.groovy =====
