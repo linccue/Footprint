@@ -104,6 +104,8 @@ android {
     }
 
     configurations.all {
+        // 3dmap 已内置定位 SDK；gradle 再拉一份 com.amap.api:location 会重复类
+        exclude(group = "com.amap.api", module = "location")
         resolutionStrategy {
             force("androidx.core:core-ktx:1.15.0")
             force("androidx.core:core:1.15.0")
