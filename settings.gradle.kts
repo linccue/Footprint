@@ -1,5 +1,3 @@
-
-
 pluginManagement {
     repositories {
         maven { url = uri("https://repo.huaweicloud.com/repository/maven-public/") }
