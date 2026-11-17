@@ -46,6 +46,10 @@ jobs:
       run: |
         echo "android.useAndroidX=true" > gradle.properties
         echo "android.enableJetifier=true" >> gradle.properties
+        # 【核心修复：增加Gradle内存，解决GC thrashing崩溃】
+        echo "org.gradle.jvmargs=-Xmx3072m -Xms1024m -XX:MaxMetaspaceSize=768m" >> gradle.properties
+        echo "org.gradle.parallel=true" >> gradle.properties
+        echo "org.gradle.configuration-cache=false" >> gradle.properties
 
     - name: Create local.properties
       run: |
