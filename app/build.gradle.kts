@@ -42,6 +42,18 @@ android {
         resourceConfigurations += listOf("zh", "zh-rCN", "en")
     }
 
+    signingConfigs {
+        getByName("debug") {
+            val debugKeystore = rootProject.file("keystore/debug.keystore")
+            if (debugKeystore.exists()) {
+                storeFile = debugKeystore
+                storePassword = "android"
+                keyAlias = "androiddebugkey"
+                keyPassword = "android"
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false  // 禁用混淆，保证 Release 版本功能与 Debug 完全一致
