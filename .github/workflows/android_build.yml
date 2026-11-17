@@ -3,6 +3,8 @@ name: Android Build
 on:
   push:
     branches: [ "master", "main" ]
+    paths-ignore:
+      - "keystore/**"
   pull_request:
     branches: [ "master", "main" ]
   workflow_dispatch:
@@ -53,6 +55,21 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
+    - name: Ensure stable debug keystore
+      run: |
+        mkdir -p keystore
+        if [ ! -f keystore/debug.keystore ]; then
+          keytool -genkeypair -v -keystore keystore/debug.keystore \
+            -storepass android -keypass android \
+            -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+          git config user.name "ci-bot"
+          git config user.email "ci-bot@users.noreply.github.com"
+          git add -f keystore/debug.keystore
+          git commit -m "ci: add stable debug keystore [skip ci]"
+          git push origin HEAD:master
+        fi
+
     - name: Add Rust Android target
       run: rustup target add aarch64-linux-android
 
@@ -66,6 +83,21 @@ jobs:
         set -o pipefail
         ./gradlew assembleDebug --stacktrace 2>&1 | tee build.log
 
+    - name: Publish signing info
+      if: always()
+      run: |
+        git config user.name "ci-bot"
+        git config user.email "ci-bot@users.noreply.github.com"
+        {
+          echo "package: com.footprint"
+          echo "keystore: keystore/debug.keystore"
+          keytool -list -v -keystore keystore/debug.keystore -storepass android -alias androiddebugkey || true
+        } > ci-signing.txt 2>&1
+        git checkout -B ci-info
+        git add -f ci-signing.txt
+        git commit -m "ci: signing info [skip ci]" || true
+        git push -f origin ci-info
+
     - name: Publish build log on failure
       if: failure()
       run: |
@@ -74,7 +106,7 @@ jobs:
         tail -c 300000 build.log > ci-build.log || true
         git checkout -B ci-build-log
         git add -f ci-build.log
-        git commit -m "ci: capture build log" || true
+        git commit -m "ci: capture build log [skip ci]" || true
         git push -f origin ci-build-log
 
     - name: Get SHA1 for Debug Keystore
