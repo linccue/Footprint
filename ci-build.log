@@ -1,0 +1,1075 @@
+Downloading https://repo.huaweicloud.com/gradle/gradle-8.9-bin.zip
+............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.9!
+
+Here are the highlights of this release:
+ - Enhanced Error and Warning Messages
+ - IDE Integration Improvements
+ - Daemon JVM Information
+
+For more details see https://docs.gradle.org/8.9/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle:pluginDescriptors
+> Task :gradle:processResources
+
+> Task :gradle:compileKotlin
+w: file:///opt/hostedtoolcache/flutter/stable-3.41.0-x64/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:11:37 'ApkVariant' is deprecated. Deprecated in Java
+w: file:///opt/hostedtoolcache/flutter/stable-3.41.0-x64/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:614:69 'ApkVariant' is deprecated. Deprecated in Java
+w: file:///opt/hostedtoolcache/flutter/stable-3.41.0-x64/flutter/packages/flutter_tools/gradle/src/main/kotlin/plugins/PluginHandler.kt:186:64 Unchecked cast: NamedDomainObjectContainer<out BuildType> to NamedDomainObjectContainer<BuildType>
+w: file:///opt/hostedtoolcache/flutter/stable-3.41.0-x64/flutter/packages/flutter_tools/gradle/src/main/kotlin/plugins/PluginHandler.kt:187:69 Unchecked cast: NamedDomainObjectContainer<out BuildType> to NamedDomainObjectContainer<BuildType>
+
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:classes
+> Task :gradle:jar
+
+> Configure project :flutter
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by plugin 'dev.flutter.flutter-gradle-plugin'
+Checking the license for package NDK (Side by side) 28.2.13676358 in /usr/local/lib/android/sdk/licenses
+License for package NDK (Side by side) 28.2.13676358 accepted.
+Preparing "Install NDK (Side by side) 28.2.13676358 v.28.2.13676358".
+"Install NDK (Side by side) 28.2.13676358 v.28.2.13676358" ready.
+Installing NDK (Side by side) 28.2.13676358 in /usr/local/lib/android/sdk/ndk/28.2.13676358
+"Install NDK (Side by side) 28.2.13676358 v.28.2.13676358" complete.
+"Install NDK (Side by side) 28.2.13676358 v.28.2.13676358" finished.
+
+> Configure project :amap_flutter_location
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file '/home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/build.gradle'
+
+> Configure project :file_picker
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo2' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/build.gradle'
+
+> Configure project :flutter_plugin_android_lifecycle
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo3' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/build.gradle'
+
+> Configure project :image_picker_android
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo4' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/build.gradle'
+
+> Configure project :permission_handler_android
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo5' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/build.gradle'
+Forced compileSdkVersion to android-35 for permission_handler_android (was 34)
+
+> Configure project :sensors_plus
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'Google6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo6' was added by build file '/home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/build.gradle'
+Forced compileSdkVersion to android-35 for sensors_plus (was 34)
+
+> Task :file_picker:preBuild UP-TO-DATE
+> Task :file_picker:preDebugBuild UP-TO-DATE
+> Task :amap_flutter_location:preBuild UP-TO-DATE
+> Task :amap_flutter_location:preDebugBuild UP-TO-DATE
+> Task :file_picker:writeDebugAarMetadata
+> Task :flutter_plugin_android_lifecycle:preBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:preDebugBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:writeDebugAarMetadata
+> Task :image_picker_android:preBuild UP-TO-DATE
+> Task :image_picker_android:preDebugBuild UP-TO-DATE
+> Task :image_picker_android:writeDebugAarMetadata
+> Task :amap_flutter_location:mergeDebugJniLibFolders
+> Task :permission_handler_android:preBuild UP-TO-DATE
+> Task :permission_handler_android:preDebugBuild UP-TO-DATE
+> Task :amap_flutter_location:mergeDebugNativeLibs NO-SOURCE
+> Task :amap_flutter_location:stripDebugDebugSymbols NO-SOURCE
+> Task :permission_handler_android:writeDebugAarMetadata
+> Task :sensors_plus:preBuild UP-TO-DATE
+> Task :sensors_plus:preDebugBuild UP-TO-DATE
+> Task :sensors_plus:writeDebugAarMetadata
+> Task :amap_flutter_location:copyDebugJniLibsProjectAndLocalJars
+> Task :file_picker:generateDebugResValues
+> Task :amap_flutter_location:generateDebugResValues
+> Task :file_picker:generateDebugResources
+> Task :amap_flutter_location:generateDebugResources
+> Task :amap_flutter_location:packageDebugResources
+> Task :file_picker:packageDebugResources
+> Task :flutter_plugin_android_lifecycle:generateDebugResValues FROM-CACHE
+> Task :flutter_plugin_android_lifecycle:generateDebugResources FROM-CACHE
+> Task :flutter_plugin_android_lifecycle:packageDebugResources
+> Task :image_picker_android:generateDebugResValues FROM-CACHE
+> Task :image_picker_android:generateDebugResources
+> Task :image_picker_android:packageDebugResources
+> Task :permission_handler_android:generateDebugResValues FROM-CACHE
+> Task :permission_handler_android:generateDebugResources FROM-CACHE
+> Task :permission_handler_android:packageDebugResources
+> Task :sensors_plus:generateDebugResValues FROM-CACHE
+> Task :sensors_plus:generateDebugResources FROM-CACHE
+> Task :sensors_plus:packageDebugResources
+> Task :file_picker:extractDeepLinksDebug
+
+> Task :file_picker:processDebugManifest
+package="com.mr.flutter.plugin.filepicker" found in source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.mr.flutter.plugin.filepicker" from the source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/AndroidManifest.xml.
+
+> Task :flutter_plugin_android_lifecycle:extractDeepLinksDebug FROM-CACHE
+
+> Task :flutter_plugin_android_lifecycle:processDebugManifest
+package="io.flutter.plugins.flutter_plugin_android_lifecycle" found in source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="io.flutter.plugins.flutter_plugin_android_lifecycle" from the source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.33/android/src/main/AndroidManifest.xml.
+
+> Task :image_picker_android:extractDeepLinksDebug FROM-CACHE
+
+> Task :image_picker_android:processDebugManifest
+package="io.flutter.plugins.imagepicker" found in source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="io.flutter.plugins.imagepicker" from the source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/image_picker_android-0.8.13+14/android/src/main/AndroidManifest.xml.
+
+> Task :permission_handler_android:extractDeepLinksDebug FROM-CACHE
+
+> Task :permission_handler_android:processDebugManifest
+package="com.baseflow.permissionhandler" found in source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.baseflow.permissionhandler" from the source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/permission_handler_android-12.1.0/android/src/main/AndroidManifest.xml.
+
+> Task :sensors_plus:extractDeepLinksDebug FROM-CACHE
+
+> Task :sensors_plus:processDebugManifest
+package="dev.fluttercommunity.plus.sensors" found in source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="dev.fluttercommunity.plus.sensors" from the source AndroidManifest.xml: /home/runner/.pub-cache/hosted/pub.dev/sensors_plus-5.0.1/android/src/main/AndroidManifest.xml.
+
+> Task :amap_flutter_location:parseDebugLocalResources
+> Task :amap_flutter_location:generateDebugRFile
+
+> Task :app:buildRust
+    Building arm64-v8a (aarch64-linux-android)
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded autocfg v1.5.0
+  Downloaded arrayref v0.3.9
+  Downloaded serde_core v1.0.228
+  Downloaded cesu8 v1.1.0
+  Downloaded adler2 v2.0.1
+  Downloaded bytes v1.11.1
+  Downloaded tower-service v0.3.3
+  Downloaded arrayvec v0.7.6
+  Downloaded cfg_aliases v0.2.1
+  Downloaded potential_utf v0.1.4
+  Downloaded atomic-waker v1.1.2
+  Downloaded pin-utils v0.1.0
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded simd-adler32 v0.3.8
+  Downloaded fdeflate v0.3.7
+  Downloaded rand_core v0.9.5
+  Downloaded futures-core v0.3.32
+  Downloaded futures-io v0.3.32
+  Downloaded serde v1.0.228
+  Downloaded proc-macro2 v1.0.106
+  Downloaded bytemuck v1.25.0
+  Downloaded futures-sink v0.3.32
+  Downloaded getrandom v0.3.4
+  Downloaded itoa v1.0.17
+  Downloaded displaydoc v0.2.5
+  Downloaded cfg-if v1.0.4
+  Downloaded color_quant v1.1.0
+  Downloaded miniz_oxide v0.8.9
+  Downloaded icu_locale_core v2.1.1
+  Downloaded hyper-util v0.1.20
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded futures-channel v0.3.32
+  Downloaded idna v1.1.0
+  Downloaded idna_adapter v1.2.1
+  Downloaded iri-string v0.7.10
+  Downloaded quote v1.0.44
+  Downloaded rustc-hash v2.1.1
+  Downloaded strict-num v0.1.1
+  Downloaded subtle v2.6.1
+  Downloaded zerofrom-derive v0.1.6
+  Downloaded crc32fast v1.5.0
+  Downloaded shlex v1.3.0
+  Downloaded try-lock v0.2.5
+  Downloaded want v0.3.1
+  Downloaded zerovec v0.11.5
+  Downloaded httparse v1.10.1
+  Downloaded http v1.4.0
+
+> Task :file_picker:compileDebugLibraryResources
+> Task :file_picker:parseDebugLocalResources
+> Task :file_picker:generateDebugRFile
+> Task :flutter_plugin_android_lifecycle:compileDebugLibraryResources FROM-CACHE
+> Task :flutter_plugin_android_lifecycle:parseDebugLocalResources FROM-CACHE
+> Task :flutter_plugin_android_lifecycle:generateDebugRFile
+
+> Task :app:buildRust
+  Downloaded http-body v1.0.1
+  Downloaded once_cell v1.21.3
+  Downloaded utf8_iter v1.0.4
+  Downloaded zeroize v1.8.2
+  Downloaded synstructure v0.13.2
+  Downloaded tiny-skia-path v0.11.4
+  Downloaded tinystr v0.8.2
+  Downloaded icu_properties v2.1.2
+  Downloaded ipnet v2.11.0
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded litemap v0.8.1
+  Downloaded pin-project-lite v0.2.16
+  Downloaded quinn-udp v0.5.14
+  Downloaded rustls-pki-types v1.14.0
+  Downloaded writeable v0.6.2
+  Downloaded yoke v0.8.1
+  Downloaded yoke-derive v0.8.1
+  Downloaded zerovec-derive v0.11.2
+  Downloaded base64 v0.22.1
+  Downloaded getrandom v0.2.17
+  Downloaded icu_collections v2.1.1
+  Downloaded jni v0.21.1
+  Downloaded num-traits v0.2.19
+  Downloaded quinn v0.11.9
+  Downloaded quinn-proto v0.11.13
+  Downloaded rand_chacha v0.9.0
+  Downloaded ryu v1.0.23
+  Downloaded thiserror-impl v2.0.18
+  Downloaded icu_provider v2.1.1
+  Downloaded bitflags v1.3.2
+  Downloaded combine v4.6.7
+  Downloaded jni-sys v0.3.0
+  Downloaded lru-slab v0.1.2
+  Downloaded percent-encoding v2.3.2
+  Downloaded png v0.17.16
+  Downloaded same-file v1.0.6
+  Downloaded sync_wrapper v1.0.2
+  Downloaded icu_properties_data v2.1.2
+  Downloaded rand v0.9.2
+  Downloaded serde_json v1.0.149
+  Downloaded thiserror v2.0.18
+  Downloaded smallvec v1.15.1
+  Downloaded walkdir v2.5.0
+  Downloaded futures-task v0.3.32
+  Downloaded futures-util v0.3.32
+  Downloaded hyper-rustls v0.27.7
+  Downloaded zmij v1.0.21
+  Downloaded log v0.4.29
+  Downloaded icu_normalizer_data v2.1.1
+  Downloaded tracing-core v0.1.36
+  Downloaded rustls v0.23.36
+  Downloaded socket2 v0.6.2
+  Downloaded slab v0.4.12
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded http-body-util v0.1.3
+  Downloaded icu_normalizer v2.1.1
+  Downloaded thiserror v1.0.69
+  Downloaded memchr v2.8.0
+  Downloaded cc v1.2.56
+  Downloaded flate2 v1.1.9
+  Downloaded reqwest v0.12.28
+  Downloaded bitflags v2.11.0
+  Downloaded jpeg-decoder v0.3.2
+  Downloaded hyper v1.8.1
+  Downloaded form_urlencoded v1.2.2
+  Downloaded rustls-webpki v0.103.9
+  Downloaded serde_derive v1.0.228
+  Downloaded tower v0.5.3
+  Downloaded tokio-macros v2.6.0
+  Downloaded tokio-rustls v0.26.4
+  Downloaded tower-http v0.6.8
+  Downloaded untrusted v0.9.0
+  Downloaded tiny-skia v0.11.4
+  Downloaded syn v2.0.117
+  Downloaded webpki-roots v1.0.6
+  Downloaded zerocopy v0.8.39
+  Downloaded byteorder v1.5.0
+  Downloaded tracing v0.1.44
+  Downloaded tokio v1.49.0
+  Downloaded url v2.5.8
+  Downloaded libc v0.2.182
+  Downloaded mio v1.1.1
+  Downloaded ring v0.17.14
+  Downloaded tower-layer v0.3.3
+  Downloaded thiserror-impl v1.0.69
+  Downloaded zerofrom v0.1.6
+  Downloaded tinyvec v1.10.0
+  Downloaded unicode-ident v1.0.24
+  Downloaded zerotrie v0.2.3
+  Downloaded image v0.24.9
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.44
+   Compiling libc v0.2.182
+   Compiling stable_deref_trait v1.2.1
+   Compiling bytes v1.11.1
+   Compiling cfg-if v1.0.4
+   Compiling pin-project-lite v0.2.16
+   Compiling futures-core v0.3.32
+   Compiling shlex v1.3.0
+   Compiling itoa v1.0.17
+   Compiling find-msvc-tools v0.1.9
+   Compiling memchr v2.8.0
+
+> Task :image_picker_android:compileDebugLibraryResources
+> Task :image_picker_android:parseDebugLocalResources
+> Task :image_picker_android:generateDebugRFile
+> Task :permission_handler_android:compileDebugLibraryResources FROM-CACHE
+> Task :permission_handler_android:parseDebugLocalResources FROM-CACHE
+> Task :permission_handler_android:generateDebugRFile
+> Task :sensors_plus:compileDebugLibraryResources FROM-CACHE
+> Task :sensors_plus:parseDebugLocalResources FROM-CACHE
+> Task :sensors_plus:generateDebugRFile
+> Task :file_picker:checkKotlinGradlePluginConfigurationErrors
+> Task :flutter_plugin_android_lifecycle:javaPreCompileDebug
+
+> Task :app:buildRust
+   Compiling cc v1.2.56
+   Compiling mio v1.1.1
+   Compiling socket2 v0.6.2
+   Compiling smallvec v1.15.1
+   Compiling litemap v0.8.1
+   Compiling writeable v0.6.2
+   Compiling syn v2.0.117
+   Compiling futures-sink v0.3.32
+   Compiling http v1.4.0
+   Compiling once_cell v1.21.3
+   Compiling icu_properties_data v2.1.2
+   Compiling icu_normalizer_data v2.1.1
+   Compiling zeroize v1.8.2
+   Compiling rustls-pki-types v1.14.0
+   Compiling ring v0.17.14
+   Compiling http-body v1.0.1
+   Compiling getrandom v0.2.17
+   Compiling percent-encoding v2.3.2
+   Compiling untrusted v0.9.0
+   Compiling simd-adler32 v0.3.8
+   Compiling futures-io v0.3.32
+   Compiling crc32fast v1.5.0
+   Compiling futures-task v0.3.32
+   Compiling httparse v1.10.1
+   Compiling slab v0.4.12
+   Compiling serde_core v1.0.228
+   Compiling futures-util v0.3.32
+   Compiling adler2 v2.0.1
+   Compiling try-lock v0.2.5
+   Compiling rustls v0.23.36
+   Compiling tower-service v0.3.3
+   Compiling want v0.3.1
+   Compiling miniz_oxide v0.8.9
+   Compiling synstructure v0.13.2
+   Compiling tracing-core v0.1.36
+   Compiling zerofrom-derive v0.1.6
+   Compiling yoke-derive v0.8.1
+   Compiling zerovec-derive v0.11.2
+   Compiling zerofrom v0.1.6
+   Compiling yoke v0.8.1
+   Compiling displaydoc v0.2.5
+   Compiling tokio-macros v2.6.0
+   Compiling zerotrie v0.2.3
+   Compiling zerovec v0.11.5
+   Compiling futures-channel v0.3.32
+   Compiling tokio v1.49.0
+   Compiling subtle v2.6.1
+   Compiling atomic-waker v1.1.2
+   Compiling tinystr v0.8.2
+   Compiling potential_utf v0.1.4
+   Compiling icu_locale_core v2.1.1
+   Compiling icu_collections v2.1.1
+   Compiling autocfg v1.5.0
+   Compiling icu_provider v2.1.1
+   Compiling icu_properties v2.1.2
+   Compiling icu_normalizer v2.1.1
+
+> Task :flutter:compileFlutterBuildDebug
+> Task :flutter:packJniLibsflutterBuildDebug
+> Task :flutter:preBuild UP-TO-DATE
+> Task :flutter:preDebugBuild UP-TO-DATE
+> Task :flutter:writeDebugAarMetadata
+> Task :flutter:generateDebugResValues FROM-CACHE
+> Task :flutter:generateDebugResources FROM-CACHE
+> Task :flutter:packageDebugResources
+> Task :flutter:extractDeepLinksDebug FROM-CACHE
+
+> Task :flutter:processDebugManifest
+package="com.footprint.flutter_ui" found in source AndroidManifest.xml: /home/runner/work/Footprint/Footprint/flutter_ui/.android/Flutter/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.footprint.flutter_ui" from the source AndroidManifest.xml: /home/runner/work/Footprint/Footprint/flutter_ui/.android/Flutter/src/main/AndroidManifest.xml.
+
+> Task :flutter:compileDebugLibraryResources FROM-CACHE
+> Task :flutter:parseDebugLocalResources FROM-CACHE
+> Task :flutter:generateDebugRFile
+> Task :file_picker:javaPreCompileDebug FROM-CACHE
+> Task :flutter:javaPreCompileDebug FROM-CACHE
+> Task :image_picker_android:javaPreCompileDebug FROM-CACHE
+> Task :permission_handler_android:javaPreCompileDebug FROM-CACHE
+
+> Task :app:buildRust
+   Compiling rustls-webpki v0.103.9
+   Compiling pin-utils v0.1.0
+   Compiling serde v1.0.228
+   Compiling idna_adapter v1.2.1
+   Compiling num-traits v0.2.19
+   Compiling tracing v0.1.44
+   Compiling serde_derive v1.0.228
+   Compiling flate2 v1.1.9
+   Compiling fdeflate v0.3.7
+   Compiling hyper v1.8.1
+   Compiling form_urlencoded v1.2.2
+   Compiling sync_wrapper v1.0.2
+   Compiling thiserror v1.0.69
+   Compiling tower-layer v0.3.3
+   Compiling log v0.4.29
+   Compiling base64 v0.22.1
+   Compiling ipnet v2.11.0
+   Compiling utf8_iter v1.0.4
+   Compiling bitflags v1.3.2
+   Compiling bytemuck v1.25.0
+   Compiling zmij v1.0.21
+   Compiling hyper-util v0.1.20
+   Compiling png v0.17.16
+   Compiling idna v1.1.0
+   Compiling tokio-rustls v0.26.4
+   Compiling tower v0.5.3
+   Compiling thiserror-impl v1.0.69
+   Compiling webpki-roots v1.0.6
+   Compiling ryu v1.0.23
+   Compiling iri-string v0.7.10
+   Compiling arrayref v0.3.9
+   Compiling serde_json v1.0.149
+
+> Task :amap_flutter_location:extractDebugAnnotations
+> Task :permission_handler_android:compileDebugJavaWithJavac
+
+> Task :app:buildRust
+   Compiling bitflags v2.11.0
+   Compiling strict-num v0.1.1
+   Compiling tiny-skia-path v0.11.4
+   Compiling serde_urlencoded v0.7.1
+   Compiling hyper-rustls v0.27.7
+   Compiling tower-http v0.6.8
+   Compiling url v2.5.8
+   Compiling http-body-util v0.1.3
+   Compiling combine v4.6.7
+   Compiling jpeg-decoder v0.3.2
+   Compiling byteorder v1.5.0
+
+> Task :permission_handler_android:bundleLibCompileToJarDebug
+> Task :sensors_plus:checkKotlinGradlePluginConfigurationErrors
+> Task :flutter_plugin_android_lifecycle:compileDebugJavaWithJavac
+
+> Task :app:buildRust
+   Compiling cesu8 v1.1.0
+   Compiling arrayvec v0.7.6
+   Compiling color_quant v1.1.0
+   Compiling jni-sys v0.3.0
+   Compiling image v0.24.9
+   Compiling tiny-skia v0.11.4
+   Compiling reqwest v0.12.28
+
+> Task :flutter_plugin_android_lifecycle:bundleLibCompileToJarDebug
+
+> Task :app:buildRust
+   Compiling jni v0.21.1
+   Compiling footprint_renderer v0.1.0 (/home/runner/work/Footprint/Footprint/app/rust)
+
+> Task :sensors_plus:compileDebugKotlin
+> Task :amap_flutter_location:extractDeepLinksForAarDebug
+> Task :amap_flutter_location:javaPreCompileDebug FROM-CACHE
+> Task :amap_flutter_location:compileDebugJavaWithJavac
+> Task :amap_flutter_location:mergeDebugGeneratedProguardFiles
+> Task :amap_flutter_location:mergeDebugConsumerProguardFiles
+> Task :amap_flutter_location:mergeDebugShaders
+> Task :amap_flutter_location:compileDebugShaders NO-SOURCE
+> Task :amap_flutter_location:generateDebugAssets UP-TO-DATE
+> Task :amap_flutter_location:packageDebugAssets
+> Task :amap_flutter_location:prepareDebugArtProfile
+> Task :amap_flutter_location:prepareLintJarForPublish
+
+> Task :amap_flutter_location:processDebugManifest
+package="com.amap.flutter.amap_flutter_location" found in source AndroidManifest.xml: /home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.amap.flutter.amap_flutter_location" from the source AndroidManifest.xml: /home/runner/.pub-cache/git/amap_flutter-d31d303dd63cfceb6531eb6516d3bd6c0e7fcb7e/amap_flutter_location/android/src/main/AndroidManifest.xml.
+
+> Task :amap_flutter_location:processDebugJavaRes NO-SOURCE
+> Task :amap_flutter_location:mergeDebugJavaResource
+> Task :amap_flutter_location:syncDebugLibJars
+> Task :amap_flutter_location:writeDebugAarMetadata
+> Task :amap_flutter_location:bundleDebugAar
+> Task :amap_flutter_location:assembleDebug
+> Task :amap_flutter_location:bundleLibCompileToJarDebug
+> Task :amap_flutter_location:compileDebugLibraryResources FROM-CACHE
+> Task :amap_flutter_location:extractDeepLinksDebug FROM-CACHE
+> Task :sensors_plus:javaPreCompileDebug FROM-CACHE
+> Task :sensors_plus:compileDebugJavaWithJavac NO-SOURCE
+> Task :sensors_plus:bundleLibCompileToJarDebug
+> Task :flutter:cleanPackageDebugAssets UP-TO-DATE
+> Task :flutter:mergeDebugShaders
+> Task :flutter:compileDebugShaders NO-SOURCE
+> Task :flutter:generateDebugAssets UP-TO-DATE
+> Task :flutter:packageDebugAssets
+> Task :flutter:copyFlutterAssetsDebug
+> Task :flutter_plugin_android_lifecycle:mergeDebugShaders
+> Task :flutter_plugin_android_lifecycle:compileDebugShaders NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:generateDebugAssets UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:packageDebugAssets
+> Task :permission_handler_android:mergeDebugShaders
+> Task :permission_handler_android:compileDebugShaders NO-SOURCE
+> Task :permission_handler_android:generateDebugAssets UP-TO-DATE
+> Task :permission_handler_android:packageDebugAssets
+> Task :sensors_plus:mergeDebugShaders
+> Task :sensors_plus:compileDebugShaders NO-SOURCE
+> Task :sensors_plus:generateDebugAssets UP-TO-DATE
+> Task :sensors_plus:packageDebugAssets
+> Task :amap_flutter_location:bundleLibRuntimeToJarDebug
+> Task :flutter_plugin_android_lifecycle:bundleLibRuntimeToJarDebug
+> Task :permission_handler_android:bundleLibRuntimeToJarDebug
+> Task :sensors_plus:bundleLibRuntimeToJarDebug
+> Task :flutter:processDebugJavaRes NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:processDebugJavaRes NO-SOURCE
+> Task :permission_handler_android:processDebugJavaRes NO-SOURCE
+> Task :sensors_plus:processDebugJavaRes
+> Task :amap_flutter_location:bundleLibRuntimeToDirDebug
+> Task :flutter_plugin_android_lifecycle:bundleLibRuntimeToDirDebug
+> Task :permission_handler_android:bundleLibRuntimeToDirDebug
+> Task :sensors_plus:bundleLibRuntimeToDirDebug
+> Task :amap_flutter_location:copyDebugJniLibsProjectOnly
+
+> Task :flutter:configureCMakeDebug[arm64-v8a]
+Checking the license for package CMake 3.22.1 in /usr/local/lib/android/sdk/licenses
+License for package CMake 3.22.1 accepted.
+Preparing "Install CMake 3.22.1 v.3.22.1".
+"Install CMake 3.22.1 v.3.22.1" ready.
+Installing CMake 3.22.1 in /usr/local/lib/android/sdk/cmake/3.22.1
+"Install CMake 3.22.1 v.3.22.1" complete.
+"Install CMake 3.22.1 v.3.22.1" finished.
+
+> Task :file_picker:mergeDebugShaders
+> Task :file_picker:compileDebugShaders NO-SOURCE
+> Task :file_picker:generateDebugAssets UP-TO-DATE
+> Task :file_picker:packageDebugAssets
+> Task :file_picker:mergeDebugJniLibFolders
+> Task :file_picker:mergeDebugNativeLibs NO-SOURCE
+> Task :file_picker:copyDebugJniLibsProjectOnly
+> Task :flutter:buildCMakeDebug[arm64-v8a]
+> Task :flutter:configureCMakeDebug[armeabi-v7a]
+> Task :flutter:buildCMakeDebug[armeabi-v7a]
+> Task :flutter:configureCMakeDebug[x86_64]
+> Task :flutter:buildCMakeDebug[x86_64]
+> Task :flutter:mergeDebugJniLibFolders
+> Task :flutter:mergeDebugNativeLibs NO-SOURCE
+> Task :flutter:copyDebugJniLibsProjectOnly
+> Task :flutter_plugin_android_lifecycle:mergeDebugJniLibFolders
+> Task :flutter_plugin_android_lifecycle:mergeDebugNativeLibs NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:copyDebugJniLibsProjectOnly
+> Task :permission_handler_android:mergeDebugJniLibFolders
+> Task :permission_handler_android:mergeDebugNativeLibs NO-SOURCE
+> Task :permission_handler_android:copyDebugJniLibsProjectOnly
+> Task :sensors_plus:mergeDebugJniLibFolders
+> Task :sensors_plus:mergeDebugNativeLibs NO-SOURCE
+> Task :sensors_plus:copyDebugJniLibsProjectOnly
+> Task :file_picker:stripDebugDebugSymbols NO-SOURCE
+> Task :file_picker:copyDebugJniLibsProjectAndLocalJars
+> Task :file_picker:extractDeepLinksForAarDebug FROM-CACHE
+> Task :file_picker:prepareDebugArtProfile
+> Task :file_picker:prepareLintJarForPublish
+> Task :flutter:DebugMinSdkCheck
+> Task :flutter:stripDebugDebugSymbols NO-SOURCE
+> Task :flutter:copyDebugJniLibsProjectAndLocalJars
+> Task :flutter:extractDeepLinksForAarDebug FROM-CACHE
+> Task :flutter:prepareDebugArtProfile
+> Task :flutter:prepareLintJarForPublish
+> Task :flutter:mergeDebugJavaResource
+> Task :flutter_plugin_android_lifecycle:stripDebugDebugSymbols NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:copyDebugJniLibsProjectAndLocalJars
+> Task :flutter_plugin_android_lifecycle:extractDebugAnnotations
+> Task :flutter_plugin_android_lifecycle:extractDeepLinksForAarDebug FROM-CACHE
+> Task :flutter_plugin_android_lifecycle:mergeDebugGeneratedProguardFiles
+> Task :flutter_plugin_android_lifecycle:mergeDebugConsumerProguardFiles
+> Task :flutter_plugin_android_lifecycle:prepareDebugArtProfile
+> Task :flutter_plugin_android_lifecycle:prepareLintJarForPublish
+> Task :flutter_plugin_android_lifecycle:mergeDebugJavaResource
+> Task :flutter_plugin_android_lifecycle:syncDebugLibJars
+> Task :flutter_plugin_android_lifecycle:bundleDebugAar
+> Task :flutter_plugin_android_lifecycle:assembleDebug
+> Task :permission_handler_android:stripDebugDebugSymbols NO-SOURCE
+> Task :permission_handler_android:copyDebugJniLibsProjectAndLocalJars
+
+> Task :file_picker:compileDebugKotlin
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerDelegate.kt:71:83 Elvis operator (?:) always returns the left operand of non-nullable type Uri
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:135:49 Unnecessary safe call on a non-null receiver of type kotlin.collections.HashMap<*, *>? /* = java.util.HashMap<*, *>? */
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:136:38 Unnecessary safe call on a non-null receiver of type kotlin.collections.HashMap<*, *>? /* = java.util.HashMap<*, *>? */
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:137:60 Unnecessary safe call on a non-null receiver of type kotlin.collections.HashMap<*, *>? /* = java.util.HashMap<*, *>? */
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:148:70 Unchecked cast: Any? to kotlin.collections.ArrayList<String>? /* = java.util.ArrayList<String>? */
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:170:70 Unchecked cast: Any? to kotlin.collections.ArrayList<String>? /* = java.util.ArrayList<String>? */
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FilePickerPlugin.kt:205:29 Name shadowed: it
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FileUtils.kt:421:45 'WEBP' is deprecated. Deprecated in Java
+w: file:///home/runner/.pub-cache/hosted/pub.dev/file_picker-10.3.10/android/src/main/kotlin/com/mr/flutter/plugin/filepicker/FileUtils.kt:429:35 'WEBP' is deprecated. Deprecated in Java
+
+> Task :file_picker:compileDebugJavaWithJavac NO-SOURCE
+> Task :permission_handler_android:extractDebugAnnotations
+> Task :file_picker:bundleLibCompileToJarDebug
+> Task :file_picker:processDebugJavaRes
+> Task :file_picker:bundleLibRuntimeToJarDebug
+> Task :file_picker:bundleLibRuntimeToDirDebug
+> Task :image_picker_android:compileDebugJavaWithJavac
+> Task :image_picker_android:bundleLibCompileToJarDebug
+> Task :file_picker:extractDebugAnnotations
+> Task :file_picker:mergeDebugGeneratedProguardFiles
+> Task :file_picker:mergeDebugConsumerProguardFiles
+> Task :file_picker:mergeDebugJavaResource
+> Task :file_picker:syncDebugLibJars
+> Task :file_picker:bundleDebugAar
+> Task :file_picker:assembleDebug
+> Task :permission_handler_android:extractDeepLinksForAarDebug FROM-CACHE
+> Task :permission_handler_android:mergeDebugGeneratedProguardFiles
+> Task :permission_handler_android:mergeDebugConsumerProguardFiles
+> Task :permission_handler_android:prepareDebugArtProfile
+> Task :image_picker_android:mergeDebugShaders
+> Task :image_picker_android:compileDebugShaders NO-SOURCE
+> Task :image_picker_android:generateDebugAssets UP-TO-DATE
+> Task :permission_handler_android:prepareLintJarForPublish
+> Task :permission_handler_android:mergeDebugJavaResource
+> Task :permission_handler_android:syncDebugLibJars
+> Task :permission_handler_android:bundleDebugAar
+> Task :permission_handler_android:assembleDebug
+> Task :sensors_plus:stripDebugDebugSymbols NO-SOURCE
+> Task :image_picker_android:packageDebugAssets
+> Task :sensors_plus:copyDebugJniLibsProjectAndLocalJars
+> Task :image_picker_android:processDebugJavaRes NO-SOURCE
+> Task :image_picker_android:bundleLibRuntimeToJarDebug
+> Task :image_picker_android:bundleLibRuntimeToDirDebug
+> Task :image_picker_android:mergeDebugJniLibFolders
+> Task :image_picker_android:mergeDebugNativeLibs NO-SOURCE
+> Task :image_picker_android:copyDebugJniLibsProjectOnly
+> Task :image_picker_android:stripDebugDebugSymbols NO-SOURCE
+> Task :image_picker_android:copyDebugJniLibsProjectAndLocalJars
+> Task :image_picker_android:extractDebugAnnotations
+> Task :image_picker_android:extractDeepLinksForAarDebug FROM-CACHE
+> Task :image_picker_android:mergeDebugGeneratedProguardFiles
+> Task :image_picker_android:mergeDebugConsumerProguardFiles
+> Task :image_picker_android:prepareDebugArtProfile
+> Task :sensors_plus:extractDebugAnnotations
+> Task :image_picker_android:prepareLintJarForPublish
+> Task :sensors_plus:extractDeepLinksForAarDebug FROM-CACHE
+> Task :image_picker_android:mergeDebugJavaResource
+> Task :sensors_plus:mergeDebugGeneratedProguardFiles
+> Task :sensors_plus:mergeDebugConsumerProguardFiles
+> Task :sensors_plus:prepareDebugArtProfile
+> Task :sensors_plus:prepareLintJarForPublish
+> Task :sensors_plus:mergeDebugJavaResource
+> Task :image_picker_android:syncDebugLibJars
+> Task :sensors_plus:syncDebugLibJars
+> Task :image_picker_android:bundleDebugAar
+> Task :image_picker_android:assembleDebug
+> Task :sensors_plus:bundleDebugAar
+> Task :sensors_plus:assembleDebug
+
+> Task :app:buildRust
+    Finished `release` profile [optimized] target(s) in 1m 17s
+     Copying libraries to /home/runner/work/Footprint/Footprint/app/src/main/jniLibs
+
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors
+> Task :flutter:compileDebugJavaWithJavac
+> Task :flutter:bundleLibRuntimeToJarDebug
+> Task :flutter:bundleLibRuntimeToDirDebug
+> Task :flutter:extractDebugAnnotations
+> Task :flutter:mergeDebugGeneratedProguardFiles
+> Task :flutter:mergeDebugConsumerProguardFiles
+> Task :flutter:syncDebugLibJars
+> Task :flutter:bundleDebugAar
+> Task :flutter:assembleDebug
+> Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues FROM-CACHE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:mergeDebugResources
+> Task :app:mergeDebugShaders
+> Task :app:javaPreCompileDebug
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:processDebugManifestForPackage
+> Task :app:desugarDebugFileDependencies
+> Task :app:compressDebugAssets
+> Task :app:processDebugResources
+> Task :app:checkDebugDuplicateClasses FAILED
+> Task :app:kaptGenerateStubsDebugKotlin
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:checkDebugDuplicateClasses'.
+> A failure occurred while executing com.android.build.gradle.internal.tasks.CheckDuplicatesRunnable
+   > Duplicate class com.amap.api.fence.DistrictItem found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.DistrictItem$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.GeoFence found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.GeoFence$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.GeoFenceClient found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.GeoFenceListener found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.PoiItem found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.fence.PoiItem$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocation found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocation$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClient found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$2 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationMode found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationProtocol found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationPurpose found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationClientOption$GeoLanguage found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationListener found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.AMapLocationQualityReport found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.APSService found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.CoordUtil found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.CoordinateConverter found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.CoordinateConverter$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.CoordinateConverter$CoordType found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.DPoint found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.DPoint$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.UmidtokenInfo found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.UmidtokenInfo$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     Duplicate class com.amap.api.location.UmidtokenInfo$a found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+     
+     Go to the documentation to learn how to <a href="d.android.com/r/tools/classpath-sync-errors">Fix dependency resolution errors</a>.
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:checkDebugDuplicateClasses'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing com.android.build.gradle.internal.tasks.CheckDuplicatesRunnable
+	at org.gradle.workers.internal.DefaultWorkerExecutor$WorkItemExecution.waitForCompletion(DefaultWorkerExecutor.java:287)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.lambda$waitForItemsAndGatherFailures$2(DefaultAsyncWorkTracker.java:130)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:339)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLocks(DefaultWorkerLeaseService.java:322)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withoutLock(DefaultWorkerLeaseService.java:327)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:126)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForItemsAndGatherFailures(DefaultAsyncWorkTracker.java:92)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForAll(DefaultAsyncWorkTracker.java:78)
+	at org.gradle.internal.work.DefaultAsyncWorkTracker.waitForCompletion(DefaultAsyncWorkTracker.java:66)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:252)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+	at org.gradle.internal.Either$Right.fold(Either.java:175)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:105)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:54)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+Caused by: java.lang.RuntimeException: Duplicate class com.amap.api.fence.DistrictItem found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.DistrictItem$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.GeoFence found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.GeoFence$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.GeoFenceClient found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.GeoFenceListener found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.PoiItem found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.fence.PoiItem$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocation found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocation$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClient found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$2 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationMode found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationProtocol found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$AMapLocationPurpose found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationClientOption$GeoLanguage found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationListener found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.AMapLocationQualityReport found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.APSService found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.CoordUtil found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.CoordinateConverter found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.CoordinateConverter$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.CoordinateConverter$CoordType found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.DPoint found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.DPoint$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.UmidtokenInfo found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.UmidtokenInfo$1 found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+Duplicate class com.amap.api.location.UmidtokenInfo$a found in modules 3dmap-10.0.600.jar -> jetified-3dmap-10.0.600 (com.amap.api:3dmap:10.0.600) and location-5.6.0.jar -> jetified-location-5.6.0 (com.amap.api:location:5.6.0)
+
+Go to the documentation to learn how to <a href="d.android.com/r/tools/classpath-sync-errors">Fix dependency resolution errors</a>.
+	at com.android.build.gradle.internal.tasks.CheckDuplicateClassesDelegate.run(CheckDuplicateClassesDelegate.kt:65)
+	at com.android.build.gradle.internal.tasks.CheckDuplicatesRunnable.execute(CheckDuplicateClassesDelegate.kt:91)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
+	at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
+	at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
+	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:195)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:128)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:170)
+	at org.gradle.internal.Factories$1.create(Factories.java:31)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:267)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:131)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:136)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:165)
+	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:134)
+	... 2 more
+
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.9/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 7m 55s
+237 actionable tasks: 199 executed, 37 from cache, 1 up-to-date
