@@ -22,63 +22,29 @@ subprojects {
         ))
     }
 
-    // 修复第三方插件的 namespace 缺失 / compileSdk 过低
     project.afterEvaluate {
-        if (project.hasProperty("android")) {
-            val android = project.extensions.getByName("android")
-
-            // 1. namespace 兜底
-            try {
-                val getNamespace = android.javaClass.getMethod("getNamespace")
-                val namespace = getNamespace.invoke(android)
-                if (namespace == null) {
-                    val targetNamespace = when {
-                        project.name == "amap_flutter_location" -> "com.amap.flutter.location"
-                        project.name == "flutter_plugin_android_lifecycle" -> "io.flutter.plugins.android_lifecycle"
-                        project.name.contains("_") -> "com.footprint." + project.name.replace("_", ".")
-                        else -> "com.footprint." + project.name
-                    }
-                    val setNamespace = android.javaClass.getMethod("setNamespace", String::class.java)
-                    setNamespace.invoke(android, targetNamespace)
-                    println("Manually set namespace for ${project.name} to $targetNamespace")
+        val androidExt = extensions.findByName("android") as? CommonExtension
+        if (androidExt != null) {
+            // ========== 1. namespace 兜底 ==========
+            if (androidExt.namespace == null) {
+                val targetNamespace = when {
+                    project.name == "amap_flutter_location" -> "com.amap.flutter.location"
+                    project.name == "flutter_plugin_android_lifecycle" -> "io.flutter.plugins.android_lifecycle"
+                    project.name.contains("_") -> "com.footprint." + project.name.replace("_", ".")
+                    else -> "com.footprint." + project.name
                 }
-            } catch (e: Exception) {}
+                androidExt.namespace = targetNamespace
+                println("Manually set namespace for ${project.name} to $targetNamespace")
+            }
 
-            // 2. compileSdk 兜底（至少 35）
-            try {
-                var currentSdkVersion: Int? = null
-                try {
-                    val getCompileSdk = android.javaClass.getMethod("getCompileSdk")
-                    currentSdkVersion = getCompileSdk.invoke(android) as? Int
-                } catch (e: Exception) {
-                    try {
-                        val getCompileSdkVersion = android.javaClass.getMethod("getCompileSdkVersion")
-                        val sdkStr = getCompileSdkVersion.invoke(android) as? String
-                        if (sdkStr != null && sdkStr.startsWith("android-")) {
-                            currentSdkVersion = sdkStr.substringAfter("android-").toIntOrNull()
-                        }
-                    } catch (e2: Exception) {}
-                }
+            // ========== 2. compileSdk 兜底，强制 >=35 ==========
+            if (androidExt.compileSdk < 35) {
+                androidExt.compileSdk = 35
+                println("Forced compileSdk to 35 for ${project.name} (was ${androidExt.compileSdk})")
+            }
 
-                if (currentSdkVersion != null && currentSdkVersion < 35) {
-                    try {
-                        val setCompileSdk = android.javaClass.getMethod("setCompileSdk", java.lang.Integer.TYPE)
-                        setCompileSdk.invoke(android, 35)
-                        println("Forced compileSdk to 35 for ${project.name} (was $currentSdkVersion)")
-                    } catch (e: Exception) {
-                        val setCompileSdkVersion = android.javaClass.getMethod("setCompileSdkVersion", String::class.java)
-                        setCompileSdkVersion.invoke(android, "android-35")
-                        println("Forced compileSdkVersion to android-35 for ${project.name} (was $currentSdkVersion)")
-                    }
-                }
-            } catch (e: Exception) {}
-        }
-    }
-
-    // 禁用 includeAndroidResources，替换 BaseExtension 为 CommonExtension（AGP9 newDsl 兼容）
-    afterEvaluate {
-        (extensions.findByName("android") as? CommonExtension)?.apply {
-            testOptions.unitTests.isIncludeAndroidResources = false
+            // ========== 3. 关闭 unitTests includeAndroidResources ==========
+            androidExt.testOptions.unitTests.isIncludeAndroidResources = false
         }
     }
 }
