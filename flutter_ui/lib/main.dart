@@ -3472,15 +3472,10 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
   }
 
   void _updateNativeLocationState() {
-    // 只有在点击定位时并且当前界面是地图界面时才会定位 -> (_userRequestedLocation && _isMapActive)
-    // 开始记录足迹后，只要没有停止记录足迹，不管在前后台都会一直定位 (由服务控制)。为保持地图篮点显示，跟踪时也开启
-    bool shouldEnable = false;
-    if (_isTracking) {
-      shouldEnable = _isMapActive;
-    } else {
-      // 如果用户点击了定位，或者正在定位过程中，且地图处于激活状态，开启原生定位
-      shouldEnable = (_userRequestedLocation || _isLocating) && _isMapActive;
-    }
+    // 高德首次定位（冷启动）要 10~30 秒。若只在点击定位时开启图层，
+    // 每次点击都是一次冷启动，表现为“定位很慢/一直不出蓝点/定位超时”。
+    // 因此地图页可见时保持定位图层常开，点击时直接用已缓存的位置。
+    final bool shouldEnable = _isMapActive;
     _mapChannel?.invokeMethod('setLocationEnabled', shouldEnable);
   }
 
@@ -3522,6 +3517,8 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
 
   void _onMapCreated(int id) {
     _mapChannel = MethodChannel('com.footprint/amap_$id');
+    // 地图一创建就开始预热定位，避免首次点击定位时冷启动
+    _updateNativeLocationState();
     _lastNativeShowHistory = null;
     _lastNativeMode = null;
     _lastNativeThemeIsDark = null;
@@ -3745,7 +3742,7 @@ class _ExploreMapScreenState extends State<ExploreMapScreen>
         }
       };
       _locationClient.startLocation();
-      Future.delayed(const Duration(seconds: 10), () {
+      Future.delayed(const Duration(seconds: 25), () {
         if (!hasResult && mounted) {
           setState(() {
             _isLocating = false;
