@@ -3,8 +3,7 @@ import java.util.Properties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // id("org.jetbrains.kotlin.kapt")  // 删除 kapt 插件
-    id("com.google.devtools.ksp") version "2.0.21-1.0.27"  // 新增 KSP 插件
+    id("com.google.devtools.ksp") version "2.0.21-1.0.27"
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
@@ -32,12 +31,15 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-
         ndk {
-            abiFilters.clear()
-            abiFilters.add("arm64-v8a")
+            abiFilters += "arm64-v8a"
         }
         resourceConfigurations += listOf("zh", "zh-rCN", "en")
+
+        // Room schema导出，KSP需要
+        ksp {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
     }
 
     buildTypes {
@@ -49,17 +51,8 @@ android {
                 "proguard-rules.pro"
             )
             matchingFallbacks += listOf("release")
-
-            ndk {
-                abiFilters.clear()
-                abiFilters.add("arm64-v8a")
-            }
         }
         debug {
-            ndk {
-                abiFilters.clear()
-                abiFilters.add("arm64-v8a")
-            }
         }
     }
 
@@ -99,6 +92,9 @@ android {
             force("androidx.activity:activity-compose:1.9.3")
             force("androidx.activity:activity-ktx:1.9.3")
             force("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.6")
+            force("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
+            force("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
+            force("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
         }
     }
 }
@@ -111,44 +107,41 @@ kotlin {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
+    // Compose BOM，适配 Kotlin2.0
+    val composeBom = platform("androidx.compose:compose-bom:2025.03.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    // Core Android
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
+    // Core Android（版本和上面force对齐）
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.6")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
+    implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     implementation("androidx.compose.material:material-icons-extended")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.compose.foundation:foundation-layout")
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-text-google-fonts")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    // Room Database —— 升级到 2.7.0 并使用 KSP
+    // Room KSP
     implementation("androidx.room:room-runtime:2.7.0")
     implementation("androidx.room:room-ktx:2.7.0")
-    ksp("androidx.room:room-compiler:2.7.0")  // 由 kapt 改为 ksp
+    ksp("androidx.room:room-compiler:2.7.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    // ===== 方案A：兼容的独立模块组合，彻底避开重复类 =====
-    // search:9.4.0 尚未内联定位类，与 location:6.4.3 边界清晰，可共存
+    // 高德地图（search + location 你原来的组合保留）
     implementation("com.amap.api:search:9.4.0")
-    // amap_flutter_location 插件要求手动提供 location，此处显式引入
     implementation("com.amap.api:location:6.4.3")
 
-    // JSON Parsing
+    // JSON
     implementation("com.google.code.gson:gson:2.10.1")
 
     // Coil
@@ -167,16 +160,17 @@ dependencies {
     implementation("dev.chrisbanes.haze:haze-jetpack-compose:0.5.2")
 
     // Flutter Module
-    "debugImplementation"(project(path = ":flutter", configuration = "debugRuntimeElements"))
-    "releaseImplementation"(project(path = ":flutter", configuration = "releaseRuntimeElements"))
+    debugImplementation(project(path = ":flutter", configuration = "debugRuntimeElements"))
+    releaseImplementation(project(path = ":flutter", configuration = "releaseRuntimeElements"))
 }
 
+// Rust编译任务，修复 cargo ndk 参数
 val buildRustTask = tasks.register<Exec>("buildRust") {
     workingDir = file("rust")
     commandLine(
         "cargo", "ndk",
         "-t", "arm64-v8a",
-        "-o", "../src/main/jniLibs",
+        "--output-dir", "../src/main/jniLibs",
         "build", "--release"
     )
 }
